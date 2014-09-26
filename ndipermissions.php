@@ -21,15 +21,15 @@ function ndipermissions_civicrm_aclWhereClause( $type, &$tables, &$whereTables, 
       || (CRM_Core_Permission::check('edit state contacts') && $type == "2")
         || (CRM_Core_Permission::check('delete state contacts') && $type == "3")){
     $address_table = 'civicrm_address';
-    $tables[$address_table] = $whereTables[$address_table] = "LEFT JOIN {$address_table} address ON address.contact_id = contact_a.id";
-    $where = "address.state_province_id IN 
+    $tables[$address_table] = $whereTables[$address_table] = "LEFT JOIN {$address_table} ON {$address_table}.contact_id = contact_a.id";
+    $where = "{$address_table}.state_province_id IN 
 								(SELECT state_province_id FROM civicrm_address WHERE contact_id = {$contactID} AND is_primary = 1 )";
   } elseif ((CRM_Core_Permission::check('view county contacts') && $type == "1")
            || (CRM_Core_Permission::check('edit county contacts') && $type == "2")
              || (CRM_Core_Permission::check('delete county contacts') && $type == "3")){
     $address_table = 'civicrm_address';
-    $tables[$address_table] = $whereTables[$address_table] = "LEFT JOIN {$address_table} address ON address.contact_id = contact_a.id";
-    $where = "address.county_id IN (SELECT county_id FROM civicrm_address WHERE contact_id = {$contactID} AND is_primary = 1 )";
+    $tables[$address_table] = $whereTables[$address_table] = "LEFT JOIN {$address_table} ON {$address_table}.contact_id = contact_a.id";
+    $where = "{$address_table}.county_id IN (SELECT county_id FROM civicrm_address WHERE contact_id = {$contactID} AND is_primary = 1 )";
   }
 }
 /*** Prevents address_id from being overriden, creates address record will NULL id ***/
