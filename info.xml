@@ -1,24 +1,25 @@
 <?xml version="1.0"?>
-<extension key="com.aghstrategies.ndipermissions" type="module">
-  <file>ndipermissions</file>
-  <name>NDI Permissions</name>
-  <description>Gives State-County Permissions</description>
+<extension key="com.aghstrategies.localpermissions" type="module">
+  <file>localpermissions</file>
+  <name>Local Permissions</name>
+  <description>Offers privileges that grant automatic permissions over contacts in a user's state or county.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Tyrell Cook</author>
     <email>tyrell@aghstrategies.com</email>
   </maintainer>
   <releaseDate>2014-05-05</releaseDate>
-  <version>1.0</version>
-  <develStage>alpha</develStage>
+  <version>1.1</version>
+  <develStage>stable</develStage>
   <compatibility>
     <ver>4.2</ver>
     <ver>4.3</ver>
     <ver>4.4</ver>
     <ver>4.5</ver>
+    <ver>4.6</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>Other names for this extension are "com.aghstrategies.ndipermissions" and "civi-permissions-extension"</comments>
   <civix>
-    <namespace>CRM/NDIpermissions</namespace>
+    <namespace>CRM/localpermissions</namespace>
   </civix>
 </extension>
